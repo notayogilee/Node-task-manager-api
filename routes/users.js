@@ -90,7 +90,7 @@ router.post('/logoutAll', auth, async (req, res) => {
 })
 
 
-// @route PUT /users/:id
+// @route PUT /users/me
 // @desc Update a user
 // @access Private
 router.put('/me', auth, async (req, res) => {
@@ -118,7 +118,7 @@ router.put('/me', auth, async (req, res) => {
   }
 })
 
-// @route DELETE /users/:id
+// @route DELETE /users/me
 // @desc Delete a user
 // @access Private
 router.delete('/me', auth, async (req, res) => {
