@@ -60,11 +60,11 @@ router.get('/:id', auth, async (req, res) => {
 // @desc Create a new task
 // @access Private
 router.post('/', auth, async (req, res) => {
-  const task = new Task({
+  const task = await new Task({
     ...req.body,
     owner: req.user._id
   })
-  console.log(task)
+
   try {
     await task.save()
     res.status(201).json({ task })
